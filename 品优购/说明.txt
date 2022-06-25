@@ -1,0 +1,65 @@
+images文件夹   放不常修改的，修饰性的图片(背景图片和精灵图等)
+upload	       放产品相关的图片，需要经常修改
+index.html       为首页
+base.css           CSS初始化样式文件，参考京东
+common.css     CSS公共样式文件
+
+PS导出切片方法：文件->导出->储存为web（旧版）储存格式，选中切片后即可存储。
+
+生成好的“网页图标”应放在网页“根目录”，即跟index.html同一目录。
+
+想找网页图标，在官网比如bilibili.com后边+/favicon.ico即可打开其网页图标。
+bilibili.com/favicon.ico
+
+a是行内元素，当它包含块级元素或行内块时，（包含有宽度的盒子） 把a转化成块级元素，否则很多东西可能不显示 
+
+空格是  &nbsp;
+
+/* n+3从第三个往后选，-n+3是从第三个往前选，即前三个 */
+.recom-bd ul li:nth-child(-n+3)::after {
+    content: '  ' ;
+}
+
+/* 最好强制让进来的图片拉伸成这个大小 */
+
+.news-bd ul li {
+    height: 24px;
+    line-height: 24px;
+    /* 变成省略，第一句隐藏超出内容 */
+    overflow: hidden;
+    /* 不允许换行，必须一行显示 */
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+
+有时候因为微小的宽度计算误差，一行内装不下原有的几个小盒子，这时候就可以用ul li结构，让ul盒子增大使其装下所有li，再给装ul的
+的盒子添加overflow:hidden;
+
+
+line-height==height时，垂直居中，>时文字会偏下，<时文字会偏上
+
+
+last-child格式：
+.sk_con ul li:last-child a::after {
+    font-family: 'icomoon';
+    content: '\ea42';
+}
+
+
+♦ 你也许注意到，你也可以用两个冒号(::before 和 ::after) 写伪元素，这个我以前讨论过的。
+简短的解释是，对于这两种语法没有什么不同，仅仅一点的不同是，伪元素(双冒号)，css3中的伪类是（单冒号）
+
+♦ 插入的元素在默认情况下是内联元素（或者，在html5中，在文本语义的类别里）。
+因此，为了给插入的元素赋予高度，填充，边距等等，你通常必须定义它是一个块级元素。
+
+
+制作鼠标放到盒子上，就出现红色边框的效果时，如果直接加border，已设定好宽高的盒子鼠标放上去时盒子就会抖动，即被多出来的边框
+压下去。这时候，盒子因加了边框而宽高改变。解决办法就是给 li 原来就加上边框，颜色写成transparent，这样前后盒子宽高不变。
+只显示左上边框的话，就别让它超过原先设定的宽高即可，给 li 加上overflow：hidden就行.
+
+选4、8、12清除右边距
+.sk_bd ul li:nth-child(4n) {
+    margin-right: 0;
+}

@@ -1,0 +1,340 @@
+/* 声明字体图标 这里一定要更换路径 五个url前面加上../ */
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?9i8z7b');
+    src: url('../fonts/icomoon.eot?9i8z7b#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?9i8z7b') format('truetype'),
+        url('../fonts/icomoon.woff?9i8z7b') format('woff'),
+        url('../fonts/icomoon.svg?9i8z7b#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+/* 版心 */
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* 快捷导航栏shortcut的样式 */
+.shortcut {
+    height: 31px;
+    line-height: 31px;
+    font-size: 14px;
+    background-color: #f1f1f1;
+}
+
+/* 左浮动 */
+.fl {
+    float: left;
+}
+
+/* 右浮动 */
+.fr {
+    float: right;
+}
+
+.shortcut ul li {
+    float: left;
+}
+
+.style_red {
+    color: #c81623;
+}
+
+/* 选择偶数的小li */
+.shortcut .fr ul li:nth-child(even) {
+    width: 1px;
+    height: 12px;
+    background-color: #666;
+    margin: 9px 15px 0;
+}
+
+.arrow-icon::after {
+    /* 一定要加一个反斜杠转义 */
+    content: '\ea43';
+    font-family: 'icomoon';
+    margin-left: 6px;
+}
+
+
+
+
+
+/* header头部制作 */
+.header {
+    position: relative;
+    height: 105px;
+}
+
+.logo {
+    position: absolute;
+    top: 25px;
+    width: 171px;
+    height: 61px;
+    /* background-color: skyblue; */
+}
+
+.logo a {
+    display: block;
+    width: 171px;
+    height: 61px;
+    background: url(../images/logo.png) no-repeat;
+    /* 第一种让文字消失的方法，让字号为0 */
+    font-size: 0;
+    /* 第二种text-indent让它出盒子，然后overflow：hidden */
+    /* text-indent: -9999px;
+    overflow: hidden; */
+}
+
+
+.search {
+    position: absolute;
+    left: 346px;
+    top: 25px;
+    width: 538px;
+    height: 36px;
+    border: 2px solid #b1191a;
+}
+
+.search input {
+    /* 不加浮动的话，搜索框和搜索按钮都是行内块元素，会有默认间距，这时用浮动就行 */
+    float: left;
+    width: 454px;
+    height: 32px;
+    padding-left: 10px;
+}
+
+.search button {
+    float: left;
+    width: 80px;
+    height: 32px;
+    background-color: #b1191a;
+    color: white;
+    font-size: 16px;
+}
+
+.hotwords {
+    position: absolute;
+    top: 66px;
+    left: 346px;
+}
+
+.hotwords a {
+    margin: 0 10px;
+}
+
+.shopcar {
+    position: absolute;
+    top: 25px;
+    right: 60px;
+    width: 140px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border: 1px solid #dfdfdf;
+    background-color: #f7f7f7;
+}
+
+.shopcar::before {
+    content: '\e93a';
+    font-family: 'icomoon';
+    margin-right: 5px;
+    color: red;
+}
+
+.shopcar::after {
+    content: '\ea42';
+    font-family: 'icomoon';
+    margin-left: 10px;
+}
+
+.count {
+    position: absolute;
+    top: -5px;
+    /* 写right就是右对齐,写left是左对齐 */
+    /* right: 20px; */
+    left: 105px;
+    height: 14px;
+    /* 这里会继承父亲的行高，导致出问题 */
+    line-height: 14px;
+    color: #fff;
+    background-color: #e60012;
+    /* padding用来撑大盒子，因为盒子没有给宽度 */
+    padding: 0 5px;
+    border-radius: 7px 7px 7px 0;
+}
+
+/* CSS3盒子模型需要把边框量进去 */
+.nav {
+    height: 47px;
+    border-bottom: 2px solid #b1191a;
+}
+
+.nav .dropdown {
+    float: left;
+    width: 210px;
+    height: 45px;
+    background-color: #b1191a;
+}
+
+.nav .navitems {
+    float: left;
+}
+
+.dropdown .dt {
+    width: 100%;
+    height: 100%;
+    /* 通过dt把盒子撑满，把dd撑到下边 */
+    color: #fff;
+    text-align: center;
+    line-height: 45px;
+    font-size: 16px;
+}
+
+.dropdown .dd {
+    /* display: none; */
+    width: 210px;
+    height: 465px;
+    background-color: #c81623;
+    margin-top: 2px;
+}
+
+.dropdown .dd ul li {
+    position: relative;
+    height: 31px;
+    line-height: 31px;
+    margin-left: 2px;
+    padding-left: 10px;
+}
+
+.dropdown .dd ul li:hover {
+    background-color: #fff;
+}
+
+.dropdown .dd ul li a {
+    font-size: 14px;
+    color: #fff;
+}
+
+.dropdown .dd ul li:hover a {
+    color: #c81623;
+}
+
+.dropdown .dd ul li::after {
+    /* float: right;
+    margin-right: 10px; */
+    position: absolute;
+    top: 1px;
+    right: 10px;
+    color: #fff;
+    content: '\ea42';
+    font-family: 'icomoon';
+    color: #fff;
+    font-size: 14px;
+}
+
+/* 给链接a加左右padding值是为了增大其点击范围,不需要给宽度，纯用padding撑开 */
+.navitems ul li {
+    float: left;
+}
+
+
+.navitems ul li a {
+    display: block;
+    height: 45px;
+    line-height: 45px;
+    font-size: 16px;
+    padding: 0 25px;
+}
+
+
+/* 底部模块制作 */
+/* 不要给宽度，给个高度即可 */
+.footer {
+    height: 415px;
+    background-color: #f5f5f5;
+    padding-top: 30px;
+}
+
+.mod_service {
+    height: 80px;
+    border-bottom: 1px solid #ccc;
+}
+
+.mod_service ul li {
+    float: left;
+    width: 300px;
+    height: 50px;
+    padding-left: 35px;
+}
+
+.mod_service ul li h5 {
+    float: left;
+    width: 50px;
+    height: 50px;
+    background: url(../images/icons.png) no-repeat -252px -3px;
+    margin-right: 8px;
+}
+
+.service_txt h4 {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.service_txt p {
+    font-size: 12px;
+}
+
+.mod_help {
+    height: 185px;
+    border-bottom: 1px solid #ccc;
+}
+
+.mod_help {
+    padding-top: 20px;
+    padding-left: 50px;
+}
+
+.mod_help dl dt {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.mod_help dl dd a {
+    font-size: 13px;
+    margin-bottom: 2px;
+    text-indent: 5px;
+}
+
+.mod_help dl {
+    float: left;
+    width: 200px;
+}
+
+.mod_help dl:last-child {
+    width: 90px;
+    text-align: center;
+}
+
+.mod_copyright {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.mod_copyright .links {
+    margin-bottom: 10px;
+}
+
+.links {
+    margin-bottom: 15px;
+}
+
+.links a {
+    margin: 0 6px;
+}
+
+.copyright {
+    line-height: 20px;
+}
